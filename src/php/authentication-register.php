@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // If no errors, proceed to create user
   if (empty($nameErr) && empty($usernameErr) && empty($passwordErr) && empty($confirmPasswordErr)) {
     // Query the database to check if the username exists
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows == 0) {
       // Username does not exist, proceed to insert new user
       $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-      $stmt = $conn->prepare("INSERT INTO users (name, username, password) VALUES (?, ?, ?)");
+      $stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
       $stmt->bind_param("sss", $name, $username, $hashed_password);
       if ($stmt->execute()) {
         // User created successfully, redirect to login page
