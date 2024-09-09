@@ -8,6 +8,11 @@
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/logo1.png" />
   <link rel="stylesheet" href="../assets/css/styles.min.css" />
 </head>
+<style>
+    .bg-green1{
+        background-color: #15B097;
+    }
+</style>
 
 <body>
   <!--  Body Wrapper -->
@@ -113,7 +118,7 @@
       <div class="container-fluid">
         <div class="container-fluid">
           <div class="card">
-            <div class="card-header bg-primary ">
+            <div class="card-header bg-green1 ">
               <h5 class="card-title fw-semibold text-white mb-0">Rice Field Irrigation System</h5>
             </div>
             <div class="card-body">

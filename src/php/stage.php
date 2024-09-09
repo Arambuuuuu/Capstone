@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="../assets/css/styles.min.css" />
 </head>
 
-
+<style>
+        .bg-green1{
+        background-color: #15B097;
+    }
+</style>
 <body>
     <!--  Body Wrapper -->
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
@@ -119,7 +123,7 @@
                     <!-- Ricefield Card -->
                     <div class="col-md-8">
                         <div class="card">
-                            <div class="card-header bg-primary">
+                            <div class="card-header bg-green1">
                                 <h5 class="card-title fw-semibold text-white mb-0">Ricefield</h5>
                             </div>
                             <div class="card-body">
@@ -152,7 +156,7 @@
                     <!-- Rice Growth Stage Card -->
                     <div class="col-md-4">
                         <div class="card">
-                            <div class="card-header bg-primary">
+                            <div class="card-header bg-green1">
                                 <h5 class="card-title fw-semibold text-white mb-0">Rice Growth Stage</h5>
                             </div>
                             <div class="card-body">
@@ -224,7 +228,7 @@
                 <div class="row mt-3">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header bg-secondary">
+                            <div class="card-header bg-green1">
                                 <h5 class="card-title fw-semibold text-white mb-0">Output</h5>
                             </div>
                             <div class="card-body" id="output">
@@ -294,7 +298,7 @@
             var moistureLevel = calculateMoistureLevel(subStage); // Assuming you have a function to calculate moisture level
             if (moistureLevel <= 10) {
                 outputHTML += "<p>Water irrigation is on</p>";
-            } else {
+            } else {    
                 outputHTML += "<p>Water irrigation is off</p>";
             }
 
