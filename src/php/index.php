@@ -379,7 +379,7 @@ if ($result->num_rows > 0) {
             </header>
             <!--  Header End -->
 
-            <div class="container-fluid">
+            <div class="container-fluid" style="background-color: #dfebe3">
                 <div class="card">
                     <div class="card-header bg-green1">
                         <h1 class="card-title fw-semibold text-white mb-0"><b>Water Irrigation Status</b></h1>
