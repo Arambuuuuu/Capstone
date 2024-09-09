@@ -79,6 +79,9 @@
     background-color: #dc3545;
     color: white;
   }
+  .bg-green1{
+        background-color: #15B097;
+    }
 </style>
 
 <body>
@@ -191,11 +194,11 @@
       <div class="container-fluid">
         <div class="container-fluid">
           <div class="card">
-            <div class="card-header bg-primary ">
+            <div class="card-header bg-green1 ">
               <h5 class="card-title fw-semibold text-white mb-0">Rice Field Irrigation System</h5>
             </div>
             <div class="card-body">
-              <h5 class="card-title fw-semibold mb-4">Automatic Mode</h5>
+              <h5 class="card-title fw-semibold mb-4" style="color: #2E4738;">Automatic Mode</h5>
               <button id="startAutoIrrigation" class="btn btn-primary">Start Auto Irrigation</button>
               <button id="stopAutoIrrigation" class="btn btn-danger">Stop Auto Irrigation</button>
               <div id="moistureStatus" class="mt-3"></div>

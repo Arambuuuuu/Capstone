@@ -13,7 +13,7 @@ if (!isset($_SESSION['name']) || !isset($_SESSION['username'])) {
 }
 
 // Retrieve the latest data from the database
-$sql = "SELECT * FROM water_levels ORDER BY timestamp DESC LIMIT 1";
+$sql = "SELECT * FROM water_levels ORDER BY current_time DESC LIMIT 1";
 $result = $conn->query($sql);
 
 $sensor_value = $status = $timestamp = "";
@@ -21,7 +21,7 @@ $sensor_value = $status = $timestamp = "";
 if ($result->num_rows > 0) {
     // Output data of the latest record
     $row = $result->fetch_assoc();
-    $sensor_value = $row["sensor_value"];
+    $sensor_value = $row["water_level"];
 
     // Interpret sensor value based on conditions
     if ($sensor_value >= 4095) {
@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
     }
 
     // Format timestamp if needed
-    $timestamp = date("Y-m-d H:i:s", strtotime($row["timestamp"]));
+    $timestamp = date("Y-m-d H:i:s", strtotime($row["current_time"]));
 
     $percentage = 0;
     $p = $percentage = "";
@@ -226,6 +226,13 @@ if ($result->num_rows > 0) {
         margin-left: auto;
         cursor: pointer;
     }
+
+    .bg-green1{
+        background-color: #15B097;
+    }
+    .green-text{
+        color: #2E4738;
+    }
 </style>
 
 
@@ -254,7 +261,7 @@ if ($result->num_rows > 0) {
                             <span class="hide-menu">Home</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="index.php" aria-expanded="false">
+                            <a class="sidebar-link " style="background-color: #15B097" href="index.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-layout-dashboard"></i>
                                 </span>
@@ -337,7 +344,7 @@ if ($result->num_rows > 0) {
                         </li>
                         <li class="nav-item">
                             <br>
-                            <h3><b>Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?>!</b></h3>
+                            <h3 class="green-text"><b>Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?>!</b></h3>
                         </li>
                     </ul>
                     <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
@@ -374,14 +381,14 @@ if ($result->num_rows > 0) {
 
             <div class="container-fluid">
                 <div class="card">
-                    <div class="card-header bg-primary">
+                    <div class="card-header bg-green1">
                         <h1 class="card-title fw-semibold text-white mb-0"><b>Water Irrigation Status</b></h1>
                     </div>
                     <!-- Content for the second additional card -->
                     <div class="card-body">
                         <!-- Water Irrigation Status -->
                         <div class="mt-3">
-                            <h3 class="fw-bold mb-3" style="color: #000; font-weight: bold;"><b>Irrigation
+                            <h3 class="fw-bold mb-3" style="color: #2E4738; font-weight: bold;"><b>Irrigation
                                     Progress is Off...</b></h3>
                             <div class="progress">
                                 <div class="progress-bar bg-success" role="progressbar" style="width: 0%;"
@@ -398,7 +405,7 @@ if ($result->num_rows > 0) {
                 <div class="row mt-4">
                     <div class="col d-flex align-items-stretch">
                         <div class="card w-100">
-                            <div class="card-header bg-primary ">
+                            <div class="card-header bg-green1 ">
                                 <h5 class="card-title fw-semibold text-white mb-0">Soil Moisture</h5>
                             </div>
                             <!-- Content for the first additional card -->
@@ -422,7 +429,7 @@ if ($result->num_rows > 0) {
                     </div>
                     <div class="col d-flex align-items-stretch">
                         <div class="card w-100">
-                            <div class="card-header bg-primary">
+                            <div class="card-header bg-green1">
                                 <h5 class="card-title fw-semibold text-white mb-0">Rice Growth Stage</h5>
                             </div>
                             <!-- Content for the second additional card -->
