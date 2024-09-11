@@ -58,7 +58,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./manual.php" aria-expanded="false">
+              <a class="sidebar-link" href="./manual.php" aria-expanded="false" style="background-color: #15B097">
                 <span>
                   <i class="ti ti-alert-circle"></i>
                 </span>

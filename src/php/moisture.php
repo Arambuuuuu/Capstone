@@ -51,6 +51,9 @@
             stroke-dashoffset: calc(350 - (350 * var(--percent)) / 100);
         }
     }
+    .bg-green1 {
+        background-color: #15B097;
+    }
 </style>
 
 <body>
@@ -121,7 +124,7 @@
                             <span class="hide-menu">Moisture</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./moisture.php" aria-expanded="false">
+                            <a class="sidebar-link" href="./moisture.php" aria-expanded="false" style="background-color: #15B097">
                                 <span>
                                     <i class="ti ti-alert-circle"></i>
                                 </span>
@@ -160,7 +163,7 @@
                     <!-- First pair of cards -->
                     <div class="col-md-6 mb-3 mb-md-0">
                         <div class="card">
-                            <div class="card-header bg-primary">
+                            <div class="card-header bg-green1">
                                 <h5 class="card-title fw-semibold text-white mb-0">Soil Moisture 1</h5>
                             </div>
                             <div class="card-body d-flex justify-content-center align-items-center">
@@ -182,7 +185,7 @@
 
                     <div class="col-md-6 mb-3 mb-md-0">
                         <div class="card">
-                            <div class="card-header bg-primary">
+                            <div class="card-header bg-green1">
                                 <h5 class="card-title fw-semibold text-white mb-0">Soil Moisture 2</h5>
                             </div>
                             <div class="card-body d-flex justify-content-center align-items-center">

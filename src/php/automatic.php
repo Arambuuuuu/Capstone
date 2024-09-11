@@ -120,11 +120,11 @@
               <span class="hide-menu">Mode</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./automatic.php" aria-expanded="false">
+              <a class="sidebar-link" href="./automatic.php" aria-expanded="false" style="background-color: #15B097">
                 <span>
                   <i class="ti ti-article"></i>
                 </span>
-                <span class="hide-menu">Automatic</span>
+                <span class="hide-menu" >Automatic</span>
               </a>
             </li>
             <li class="sidebar-item">
