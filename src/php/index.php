@@ -420,7 +420,7 @@ if ($result->num_rows > 0) {
                                     </div>
                                     <!-- <p id="moistureMessage"></p> -->
                                     <!-- <h2><strong>Percentage:</strong> <?php echo $p; ?></h2> -->
-                                    <p><strong>Latest sensor value:</strong> <?php echo $sensor_value; ?></p>
+                                    <p><strong>Latest sensor value:</strong> <?php echo $sensor_value; ?>&nbsp;cm</p>
                                     <p><strong>Status:</strong> <?php echo $status; ?></p>
                                     <p><strong>Timestamp:</strong> <?php echo $timestamp; ?></p>
                                 </div>
