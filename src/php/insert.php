@@ -1,4 +1,8 @@
 <?php
+header("Location: index.php");
+exit(); // Ensure no further code is executed after the redirect
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -35,7 +39,24 @@ if(isset($_GET['distance']) && isset($_GET['id'])) {
 } else {
     echo "No sensor value or id received";
 }
+$sql = "SELECT * FROM `water_levels` WHERE 1";
+$result = $conn->query($sql);
+
+// Check if any rows are returned
+if ($result->num_rows > 0) {
+    // Fetch each row of the result set
+    while ($row = $result->fetch_assoc()) {
+        $sensor_value = $row["water_level"]; // Get the 'water_level' from the row
+        echo "<br>Water Level: " . $sensor_value . " cm<br>"; // Display the value
+    }
+} else {
+    echo "No results found.";
+}
+
+
 
 // Close the connection
 $conn->close();
+
+
 ?>
