@@ -4,7 +4,7 @@ $username = "root";
 $password = "";
 $dbname = "awis_db";
 
-// Create connection
+// Create connection using mysqli object-oriented style
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
@@ -14,32 +14,26 @@ if ($conn->connect_error) {
 
 // Check if data is received via GET method
 if(isset($_GET['distance']) && isset($_GET['id'])) {
-    $sensor_value = intval($_GET['distance']); // Ensure this is an integer
-    $id = intval($_GET['id']); // Ensure this is an integer
+    $sensor_value = intval($_GET['distance']); // Cast to integer for safety
+    $id = intval($_GET['id']); // Cast to integer for safety
 
-    // Get the current time
-    $current_time = date("Y-m-d H:i:s"); // Format: YYYY-MM-DD HH:MM:SS
-
-    // Prepare the SQL statement to update the water level and the current time
-    $stmt = $conn->prepare("UPDATE water_levels SET water_level = $_POST, current_time = ? WHERE sensorId = ?");
-
-    // Bind the parameters (water_level, current_time, sensorId)
-    $stmt->bind_param("isi", $sensor_value, $current_time, $id);
-
-    // Debugging: Output the SQL statement and data
-    echo "Updating sensor ID: $id with distance: $sensor_value at time: $current_time <br>";
+    // Prepare the SQL statement to prevent SQL injection
+    $stmt = $conn->prepare("UPDATE water_levels SET water_level = ? WHERE sensorID = ?");
+    
+    // Bind parameters to the prepared statement (i = integer type)
+    $stmt->bind_param("ii", $sensor_value, $id);
 
     // Execute the prepared statement
     if ($stmt->execute()) {
-        echo "Record updated successfully<br>";
+        echo "Record updated successfully";
     } else {
-        echo "Error updating record: " . $stmt->error . "<br>";
+        echo "Error updating record: " . $stmt->error;
     }
 
     // Close the statement
     $stmt->close();
 } else {
-    echo "No sensor value or id received<br>";
+    echo "No sensor value or id received";
 }
 
 // Close the connection
