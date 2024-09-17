@@ -319,7 +319,7 @@ if ($result->num_rows > 0) {
                         <!-- Button to trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#addMoistSensingDeviceModal">
-                            Add Moist Sensing Device
+                            <img src="../assets/images/microcontroller.png" height="20px">&nbsp; Add Moist Sensing Device
                         </button>
                         <!-- Container for displaying added devices -->
                         <div id="deviceList" class="mt-3"></div>

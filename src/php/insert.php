@@ -1,7 +1,5 @@
 <?php
 
-
-
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -17,14 +15,14 @@ if ($conn->connect_error) {
 
 // Check if data is received via GET method
 if(isset($_GET['distance']) && isset($_GET['id'])) {
-    $sensor_value = intval($_GET['distance']); // Cast to integer for safety
+    $sensor_value = floatval($_GET['distance']); // Cast to float for decimal values
     $id = intval($_GET['id']); // Cast to integer for safety
 
     // Prepare the SQL statement to prevent SQL injection
     $stmt = $conn->prepare("UPDATE water_levels SET water_level = ? WHERE sensorID = ?");
-    
-    // Bind parameters to the prepared statement (i = integer type)
-    $stmt->bind_param("ii", $sensor_value, $id);
+
+    // Bind parameters to the prepared statement (d = double, i = integer)
+    $stmt->bind_param("di", $sensor_value, $id);
 
     // Execute the prepared statement
     if ($stmt->execute()) {
@@ -38,6 +36,7 @@ if(isset($_GET['distance']) && isset($_GET['id'])) {
 } else {
     echo "No sensor value or id received";
 }
+
 $sql = "SELECT * FROM `water_levels` WHERE 1";
 $result = $conn->query($sql);
 
@@ -51,8 +50,6 @@ if ($result->num_rows > 0) {
 } else {
     echo "No results found.";
 }
-
-
 
 // Close the connection
 $conn->close();
