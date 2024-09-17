@@ -1,6 +1,5 @@
 <?php
-header("Location: index.php");
-exit(); // Ensure no further code is executed after the redirect
+
 
 
 $servername = "localhost";
@@ -58,5 +57,7 @@ if ($result->num_rows > 0) {
 // Close the connection
 $conn->close();
 
+header("Location: index.php");
+exit(); // Ensure no further code is executed after the redirect
 
 ?>

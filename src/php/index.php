@@ -388,8 +388,28 @@ if ($result->num_rows > 0) {
                     <div class="card-body">
                         <!-- Water Irrigation Status -->
                         <div class="mt-3">
-                            <h3 class="fw-bold mb-3" style="color: #2E4738; font-weight: bold;"><b>Irrigation
-                                    Progress is Off...</b></h3>
+                                <h3 class="fw-bold mb-3" style="color: #2E4738; font-weight: bold;"><b><?php
+$sql = "SELECT * FROM `relay` WHERE 1";
+$result = $conn->query($sql);
+
+// Check if any rows are returned
+if ($result->num_rows > 0) {
+    // Fetch the row(s)
+    $row = $result->fetch_assoc();
+
+    // Assuming you have a column like 'relay_status' to indicate if the irrigation is on (1) or off (0)
+    if ($row['relay_status'] == 1) {
+        echo "Irrigation Progress is On...";
+    } else {
+        echo "Irrigation Progress is Off...";
+    }
+} else {
+    echo "No data found in the relay table.";
+}
+
+$conn->close();
+?>
+</b></h3>
                             <div class="progress">
                                 <div class="progress-bar bg-success" role="progressbar" style="width: 0%;"
                                     aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressBar">0%
