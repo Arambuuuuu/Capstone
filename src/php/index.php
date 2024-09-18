@@ -261,7 +261,7 @@ if ($result->num_rows > 0) {
                             <span class="hide-menu">Home</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link " style="background-color: #15B097" href="index.php" aria-expanded="false">
+                            <a class="sidebar-link" style="background-color: #15B097" href="index.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-layout-dashboard"></i>
                                 </span>
@@ -302,24 +302,25 @@ if ($result->num_rows > 0) {
                         </li>
                         <li class="nav-small-cap">
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">Moisture</span>
+                            <span class="hide-menu">Water Level</span>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="./moisture.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-alert-circle"></i>
                                 </span>
-                                <span class="hide-menu">Soil Moisture</span>
+                                <span class="hide-menu">Water Level Indicator/s</span>
                             </a>
                         </li>
+                        <!-- I suggest na walaon na ni tapos ang button na ubos ani kay i-under nalang sa water level na name -->
                         <li class="nav-small-cap">
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                             <span class="hide-menu">Moist Sensing Device</span>
                         </li>
                         <!-- Button to trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-success" style="background-color: #15B097" data-bs-toggle="modal"
                             data-bs-target="#addMoistSensingDeviceModal">
-                            <img src="../assets/images/microcontroller.png" height="20px">&nbsp; Add Moist Sensing Device
+                            <img src="../assets/images/microcontroller.png" height="20px">&nbsp; Add Water Level Indicator Device
                         </button>
                         <!-- Container for displaying added devices -->
                         <div id="deviceList" class="mt-3"></div>
@@ -369,7 +370,7 @@ if ($result->num_rows > 0) {
                                         <p class="user-info"><span class="label">Email:</span>
                                             <?php echo $username; ?></p>
                                         <a href="authentication-login.php"
-                                            class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                                            class="btn btn-outline-danger mx-3 mt-2 d-block">Logout</a>
                                     </div>
                                 </div>
                             </li>
@@ -498,7 +499,7 @@ $conn->close();
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" onclick="addDevice()">Add Device</button>
+                            <button type="button" class="btn btn-success" style="background-color: #15B097" onclick="addDevice()">Add Device</button>
                         </div>
                     </div>
                 </div>
