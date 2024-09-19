@@ -37,28 +37,27 @@ if ($result->num_rows > 0) {
 
     $percentage = 0;
     $p = $percentage = "";
-    if($sensor_value >= 4095){
+    if ($sensor_value >= 4095) {
         $p = "0";
-    }else if($sensor_value <= 1300){
+    } else if ($sensor_value <= 1300) {
         $p = "100";
-    }else if($sensor_value <= 1600){
+    } else if ($sensor_value <= 1600) {
         $p = "85.7";
-    }else if($sensor_value <= 1700){
+    } else if ($sensor_value <= 1700) {
         $p = "71.4";
-    }else if($sensor_value <= 1950){
+    } else if ($sensor_value <= 1950) {
         $p = "50";
-    }else if($sensor_value <= 1680){
+    } else if ($sensor_value <= 1680) {
         $p = "42.9";
-    }else if($sensor_value <= 2080){
+    } else if ($sensor_value <= 2080) {
         $p = "28.6";
-    }else if($sensor_value >= 2255){
+    } else if ($sensor_value >= 2255) {
         $p = "14";
-    }else if($sensor_value >= 2170){
+    } else if ($sensor_value >= 2170) {
         $p = "14";
+    } else {
+        echo "0";
     }
-    else {
-    echo "0";
-}
 }
 ?>
 
@@ -71,169 +70,9 @@ if ($result->num_rows > 0) {
     <title>RiceDrops</title>
     <link rel="shortcut icon" type="image/png" href="../assets/images/logos/logo1.png" />
     <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
-<style>
-    .progress-circle {
-        position: relative;
-        width: 200px;
-        height: 200px;
-    }
-
-    .progress-svg {
-        width: 100%;
-        height: 100%;
-    }
-
-    .progress-circle-bg {
-        fill: none;
-        stroke: #f0f0f0;
-        stroke-width: 10;
-    }
-
-    .progress-circle-bar {
-        fill: none;
-        stroke: #00cc99;
-        /* Changed progress bar color */
-        stroke-width: 12;
-        /* Increased stroke width for better visibility */
-        stroke-linecap: round;
-        /* Rounded line ends */
-        stroke-dasharray: 0, 100;
-        transition: stroke-dasharray 0.5s;
-    }
-
-    .progress-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 28px;
-        font-weight: bold;
-        color: #555;
-        /* Changed text color */
-    }
-
-    #moistureMessage {
-        font-size: 18px;
-        color: #777;
-        /* Changed message color */
-    }
-
-    .card {
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-    }
-
-    .card-body {
-        padding: 20px;
-    }
-
-    .progress-circle-2 {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background-color: #f3f3f3;
-        position: relative;
-        display: inline-block;
-    }
-
-    .progress-circle-2:before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: conic-gradient(#3498db 0% 25%, #f3f3f3 25% 100%);
-        transform: rotate(-90deg);
-    }
-
-    .progress {
-        height: 20px;
-        border-radius: 10px;
-        background-color: #f3f3f3;
-    }
-
-    .progress-bar {
-        border-radius: 10px;
-    }
-
-    .user-dropdown {
-        width: 250px;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-    }
-
-    .user-info {
-        margin-bottom: 10px;
-    }
-
-    .user-info .label {
-        font-weight: bold;
-        color: #333;
-    }
-
-    .btn-outline-primary {
-        color: #007bff;
-        border-color: #007bff;
-    }
-
-    .btn-outline-primary:hover {
-        background-color: #007bff;
-        color: #fff;
-    }
-
-    .btn-outline-primary:focus,
-    .btn-outline-primary.focus {
-        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-    }
-
-    .edit-btn {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-    }
-
-    .edit-btn i {
-        font-size: 20px;
-    }
-
-    .card-body {
-        position: relative;
-    }
-
-    .display-text {
-        font-size: 18px;
-    }
-
-
-
-    .device-card {
-        background-color: #f8f9fa;
-        padding: 10px;
-        margin-bottom: 5px;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-    }
-
-    .delete-device-btn {
-        margin-left: auto;
-        cursor: pointer;
-    }
-
-    .bg-green1{
-        background-color: #15B097;
-    }
-    .green-text{
-        color: #2E4738;
-    }
-</style>
 
 
 <body>
@@ -261,7 +100,8 @@ if ($result->num_rows > 0) {
                             <span class="hide-menu">Home</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link " style="background-color: #15B097" href="index.php" aria-expanded="false">
+                            <a class="sidebar-link " style="background-color: #15B097" href="index.php"
+                                aria-expanded="false">
                                 <span>
                                     <i class="ti ti-layout-dashboard"></i>
                                 </span>
@@ -319,7 +159,8 @@ if ($result->num_rows > 0) {
                         <!-- Button to trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#addMoistSensingDeviceModal">
-                            <img src="../assets/images/microcontroller.png" height="20px">&nbsp; Add Moist Sensing Device
+                            <img src="../assets/images/microcontroller.png" height="20px">&nbsp; Add Moist Sensing
+                            Device
                         </button>
                         <!-- Container for displaying added devices -->
                         <div id="deviceList" class="mt-3"></div>
@@ -344,7 +185,8 @@ if ($result->num_rows > 0) {
                         </li>
                         <li class="nav-item">
                             <br>
-                            <h3 class="green-text"><b>Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?>!</b></h3>
+                            <h3 class="green-text"><b>Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?>!</b>
+                            </h3>
                         </li>
                     </ul>
                     <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
@@ -388,28 +230,29 @@ if ($result->num_rows > 0) {
                     <div class="card-body">
                         <!-- Water Irrigation Status -->
                         <div class="mt-3">
-                                <h3 class="fw-bold mb-3" style="color: #2E4738; font-weight: bold;"><b><?php
-$sql = "SELECT * FROM `relay` WHERE 1";
-$result = $conn->query($sql);
+                            <h3 class="fw-bold mb-3" style="color: #2E4738; font-weight: bold;"><b>
+                                    <?php
+                                    $sql = "SELECT * FROM `relay` WHERE 1";
+                                    $result = $conn->query($sql);
 
-// Check if any rows are returned
-if ($result->num_rows > 0) {
-    // Fetch the row(s)
-    $row = $result->fetch_assoc();
+                                    // Check if any rows are returned
+                                    if ($result->num_rows > 0) {
+                                        // Fetch the row(s)
+                                        $row = $result->fetch_assoc();
 
-    // Assuming you have a column like 'relay_status' to indicate if the irrigation is on (1) or off (0)
-    if ($row['relay_status'] == 1) {
-        echo "Irrigation Progress is On...";
-    } else {
-        echo "Irrigation Progress is Off...";
-    }
-} else {
-    echo "No data found in the relay table.";
-}
+                                        // Assuming you have a column like 'relay_status' to indicate if the irrigation is on (1) or off (0)
+                                        if ($row['relay_status'] == 1) {
+                                            echo "Irrigation Progress is On...";
+                                        } else {
+                                            echo "Irrigation Progress is Off...";
+                                        }
+                                    } else {
+                                        echo "No data found in the relay table.";
+                                    }
 
-$conn->close();
-?>
-</b></h3>
+                                    $conn->close();
+                                    ?>
+                                </b></h3>
                             <div class="progress">
                                 <div class="progress-bar bg-success" role="progressbar" style="width: 0%;"
                                     aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressBar">0%

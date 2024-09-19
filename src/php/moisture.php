@@ -7,54 +7,8 @@
     <title>RiceDrops</title>
     <link rel="shortcut icon" type="image/png" href="../assets/images/logos/logo1.png" />
     <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
-
-<style>
-    .progress-circle {
-        position: relative;
-        width: 120px;
-        height: 120px;
-    }
-
-    .progress-circle svg {
-        transform: rotate(-90deg);
-    }
-
-    .progress-circle circle {
-        fill: none;
-        stroke: #ddd;
-        stroke-width: 10;
-        stroke-linecap: round;
-    }
-
-    .progress-circle .progress {
-        fill: none;
-        stroke: #007bff;
-        /* Primary color */
-        stroke-width: 10;
-        stroke-linecap: round;
-        animation: progress-animation 2s ease forwards;
-    }
-
-    .progress-circle .percentage {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 18px;
-        color: #007bff;
-        /* Primary color */
-    }
-
-    @keyframes progress-animation {
-        to {
-            stroke-dashoffset: calc(350 - (350 * var(--percent)) / 100);
-        }
-    }
-    .bg-green1 {
-        background-color: #15B097;
-    }
-</style>
 
 <body>
     <!--  Body Wrapper -->
@@ -124,7 +78,8 @@
                             <span class="hide-menu">Moisture</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./moisture.php" aria-expanded="false" style="background-color: #15B097">
+                            <a class="sidebar-link" href="./moisture.php" aria-expanded="false"
+                                style="background-color: #15B097">
                                 <span>
                                     <i class="ti ti-alert-circle"></i>
                                 </span>

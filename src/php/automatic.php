@@ -7,82 +7,8 @@
   <title>RiceDrops</title>
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/logo1.png" />
   <link rel="stylesheet" href="../assets/css/styles.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
-
-<style>
-  body .log {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
-    height: 200px;
-    overflow-y: scroll;
-    margin-top: 20px;
-  }
-
-  .log-entry {
-    border-bottom: 1px solid #eee;
-    padding: 5px 0;
-  }
-
-  .status {
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-  }
-
-  .status-low {
-    background-color: #ffdddd;
-    color: #d9534f;
-  }
-
-  .status-mid {
-    background-color: #fff3cd;
-    color: #856404;
-  }
-
-  .status-high {
-    background-color: #d4edda;
-    color: #155724;
-  }
-
-  .progress-container {
-    margin-top: 20px;
-    background: #e9ecef;
-    border-radius: 5px;
-    overflow: hidden;
-  }
-
-  .progress-bar {
-    height: 20px;
-    background: #28a745;
-    width: 0;
-  }
-
-  .controls {
-    margin: 20px 0;
-  }
-
-  .controls button {
-    padding: 10px 20px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .controls button.start {
-    background-color: #007bff;
-    color: white;
-  }
-
-  .controls button.stop {
-    background-color: #dc3545;
-    color: white;
-  }
-  .bg-green1{
-        background-color: #15B097;
-    }
-</style>
 
 <body>
   <!--  Body Wrapper -->
@@ -124,13 +50,13 @@
                 <span>
                   <i class="ti ti-article"></i>
                 </span>
-                <span class="hide-menu" >Automatic</span>
+                <span class="hide-menu">Automatic</span>
               </a>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="./manual.php" aria-expanded="false">
                 <span>
-                <i class="ti ti-alert-circle alert-icon"></i>
+                  <i class="ti ti-alert-circle alert-icon"></i>
                 </span>
                 <span class="hide-menu">Manual</span>
               </a>

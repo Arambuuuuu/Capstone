@@ -7,13 +7,9 @@
     <title>RiceDrops</title>
     <link rel="shortcut icon" type="image/png" href="../assets/images/logos/logo1.png" />
     <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-<style>
-        .bg-green1{
-        background-color: #15B097;
-    }
-</style>
 <body>
     <!--  Body Wrapper -->
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
@@ -70,7 +66,8 @@
                             <span class="hide-menu">Stages</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./stage.php" aria-expanded="false" style="background-color: #15B097">
+                            <a class="sidebar-link" href="./stage.php" aria-expanded="false"
+                                style="background-color: #15B097">
                                 <span>
                                     <i class="ti ti-alert-circle"></i>
                                 </span>
@@ -298,7 +295,7 @@
             var moistureLevel = calculateMoistureLevel(subStage); // Assuming you have a function to calculate moisture level
             if (moistureLevel <= 10) {
                 outputHTML += "<p>Water irrigation is on</p>";
-            } else {    
+            } else {
                 outputHTML += "<p>Water irrigation is off</p>";
             }
 
