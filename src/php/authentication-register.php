@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="checkbox" id="showPasswordCheckbox">
                     <label for="showPasswordCheckbox" class="checkbox-label show-password-label">Show Password</label>
                   </div>
-                  <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Create Account</button>
+                  <button type="submit" class="btn btn-success w-100 py-8 fs-4 mb-4 rounded-2">Create Account</button>
                   <div class="d-flex align-items-center justify-content-center">
                     <p class="fs-4 mb-0 fw-bold">Already have an account?</p>
                     <a class="text-primary fw-bold ms-2" href="authentication-login.php">Sign in</a>

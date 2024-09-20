@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="checkbox" class="form-check-input" id="showPasswordCheckbox">
                     <label for="showPasswordCheckbox" class="form-check-label">Show Password</label>
                   </div>
-                  <button type="submit" class="btn btn-primary w-100 py-2 fs-5 mb-4 rounded-2">Sign In</button>
+                  <button type="submit" class="btn btn-success w-100 py-2 fs-5 mb-4 rounded-2">Sign In</button>
                   <div class="d-flex align-items-center justify-content-center">
                     <p class="fs-5 mb-0 fw-bold">Doesn't have account?</p>
                     <a class="text-primary fw-bold ms-2" href="authentication-register.php">Create an account</a>
