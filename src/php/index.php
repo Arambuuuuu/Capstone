@@ -142,24 +142,20 @@ if ($result->num_rows > 0) {
                         </li>
                         <li class="nav-small-cap">
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">Moisture</span>
+                            <span class="hide-menu">Water Level</span>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="./moisture.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-alert-circle"></i>
                                 </span>
-                                <span class="hide-menu">Soil Moisture</span>
+                                <span class="hide-menu">Water Level</span>
                             </a>
                         </li>
-                        <li class="nav-small-cap">
-                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">Moist Sensing Device</span>
-                        </li>
                         <!-- Button to trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-success sidebar-item" data-bs-toggle="modal"
                             data-bs-target="#addMoistSensingDeviceModal">
-                            <img src="../assets/images/microcontroller.png" height="20px">&nbsp; Add Moist Sensing
+                            <img src="../assets/images/microcontroller.png" height="20px">&nbsp; Add Water Level Indicator
                             Device
                         </button>
                         <!-- Container for displaying added devices -->
@@ -211,7 +207,7 @@ if ($result->num_rows > 0) {
                                         <p class="user-info"><span class="label">Email:</span>
                                             <?php echo $username; ?></p>
                                         <a href="authentication-login.php"
-                                            class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                                            class="btn btn-outline-danger mx-3 mt-2 d-block">Logout</a>
                                     </div>
                                 </div>
                             </li>
@@ -269,7 +265,7 @@ if ($result->num_rows > 0) {
                     <div class="col d-flex align-items-stretch">
                         <div class="card w-100">
                             <div class="card-header bg-green1 ">
-                                <h5 class="card-title fw-semibold text-white mb-0">Soil Moisture</h5>
+                                <h5 class="card-title fw-semibold text-white mb-0">Water Level</h5>
                             </div>
                             <!-- Content for the first additional card -->
                             <div class="card-body">
