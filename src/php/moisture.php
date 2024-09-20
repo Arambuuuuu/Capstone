@@ -75,7 +75,7 @@
                         </li>
                         <li class="nav-small-cap">
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">Moisture</span>
+                            <span class="hide-menu">Water Level</span>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="./moisture.php" aria-expanded="false"
@@ -83,10 +83,19 @@
                                 <span>
                                     <i class="ti ti-alert-circle"></i>
                                 </span>
-                                <span class="hide-menu">Soil Moisture</span>
+                                <span class="hide-menu">Water Level</span>
                             </a>
                         </li>
-
+                        <li> <!-- Button to trigger modal -->
+                            <button type="button" class="btn btn-success sidebar-item" data-bs-toggle="modal"
+                                data-bs-target="#addMoistSensingDeviceModal">
+                                <img src="../assets/images/microcontroller.png" height="20px">&nbsp; Add Water Level Indicator
+                                Device
+                            </button>
+                        </li>
+                        
+                        <!-- Container for displaying added devices -->
+                        <div id="deviceList" class="mt-3"></div>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
@@ -119,7 +128,7 @@
                     <div class="col-md-6 mb-3 mb-md-0">
                         <div class="card">
                             <div class="card-header bg-green1">
-                                <h5 class="card-title fw-semibold text-white mb-0">Soil Moisture 1</h5>
+                                <h5 class="card-title fw-semibold text-white mb-0">Water Level Indicator 1</h5>
                             </div>
                             <div class="card-body d-flex justify-content-center align-items-center">
                                 <!-- Circular Progress Loading -->
@@ -133,7 +142,7 @@
 
                                 <!-- Content for the first card -->
                             </div>
-                            <h5 class="text-center mt-3 mb-3">Soil Moisture is Moderate</h5>
+                            <h5 class="text-center mt-3 mb-3">Water Level is Moderate</h5>
                         </div>
 
                     </div>
@@ -141,7 +150,7 @@
                     <div class="col-md-6 mb-3 mb-md-0">
                         <div class="card">
                             <div class="card-header bg-green1">
-                                <h5 class="card-title fw-semibold text-white mb-0">Soil Moisture 2</h5>
+                                <h5 class="card-title fw-semibold text-white mb-0">Water Level Indicator 2</h5>
                             </div>
                             <div class="card-body d-flex justify-content-center align-items-center">
                                 <!-- Circular Progress Loading -->
@@ -154,7 +163,7 @@
                                 </div>
                                 <!-- Content for the second card -->
                             </div>
-                            <h5 class="text-center mt-3 mb-3">Soil Moisture is Moderate</h5>
+                            <h5 class="text-center mt-3 mb-3">Water Level is Moderate</h5>
                         </div>
                     </div>
                 </div>
