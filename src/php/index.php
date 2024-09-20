@@ -152,12 +152,14 @@ if ($result->num_rows > 0) {
                                 <span class="hide-menu">Water Level</span>
                             </a>
                         </li>
-                        <!-- Button to trigger modal -->
-                        <button type="button" class="btn btn-success sidebar-item" data-bs-toggle="modal"
-                            data-bs-target="#addMoistSensingDeviceModal">
-                            <img src="../assets/images/microcontroller.png" height="20px">&nbsp; Add Water Level Indicator
-                            Device
-                        </button>
+                        <li> <!-- Button to trigger modal -->
+                            <button type="button" class="btn btn-success sidebar-item" data-bs-toggle="modal"
+                                data-bs-target="#addMoistSensingDeviceModal">
+                                <img src="../assets/images/microcontroller.png" height="20px">&nbsp; Add Water Level Indicator
+                                Device
+                            </button>
+                        </li>
+                        
                         <!-- Container for displaying added devices -->
                         <div id="deviceList" class="mt-3"></div>
                     </ul>

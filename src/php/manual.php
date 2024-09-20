@@ -75,16 +75,26 @@
             </li>
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">Moisture</span>
+              <span class="hide-menu">Water Level</span>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="./moisture.php" aria-expanded="false">
                 <span>
                   <i class="ti ti-alert-circle"></i>
                 </span>
-                <span class="hide-menu">Soil Moisture</span>
+                <span class="hide-menu">Water Level</span>
               </a>
             </li>
+            <li><!-- Button to trigger modal -->
+              <button type="button" class="btn btn-success sidebar-item" data-bs-toggle="modal"
+                  data-bs-target="#addMoistSensingDeviceModal">
+                  <img src="../assets/images/microcontroller.png" height="20px">&nbsp; Add Water Level Indicator
+                  Device
+              </button>
+            </li>
+            
+            <!-- Container for displaying added devices -->
+            <div id="deviceList" class="mt-3"></div>
 
         </nav>
         <!-- End Sidebar navigation -->
@@ -120,7 +130,7 @@
             <div class="card-body">
               <h5 class="card-title fw-semibold mb-4">Manual Mode</h5>
               <button id="startIrrigation" class="btn btn-primary">Start Irrigation</button>
-              <div id="irrigationStatus" class="alert alert-info mt-4" role="alert">
+              <div id="irrigationStatus" class="alert alert-success mt-4" role="alert">
                 Waiting to start irrigation...
               </div>
               <div class="progress mt-4">
