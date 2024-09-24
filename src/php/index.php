@@ -74,7 +74,6 @@ if ($result->num_rows > 0) {
 </head>
 
 
-
 <body>
     <!--  Body Wrapper -->
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
@@ -155,11 +154,12 @@ if ($result->num_rows > 0) {
                         <li> <!-- Button to trigger modal -->
                             <button type="button" class="btn btn-success sidebar-item" data-bs-toggle="modal"
                                 data-bs-target="#addMoistSensingDeviceModal">
-                                <img src="../assets/images/microcontroller.png" height="20px">&nbsp; Add Water Level Indicator
+                                <img src="../assets/images/microcontroller.png" height="20px">&nbsp; Add Water Level
+                                Indicator
                                 Device
                             </button>
                         </li>
-                        
+
                         <!-- Container for displaying added devices -->
                         <div id="deviceList" class="mt-3"></div>
                     </ul>
@@ -187,14 +187,103 @@ if ($result->num_rows > 0) {
                             </h3>
                         </li>
                     </ul>
+
                     <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
                         <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+
+                            <style>
+                                .btn-success-custom {
+                                    background-color: #15B097;
+                                    border-color: #15B097;
+                                }
+
+                                .btn-success-custom:hover {
+                                    background-color: #129984;
+                                    /* Slightly darker shade for hover effect */
+                                    border-color: #129984;
+                                }
+                            </style>
+
+                            <!-- Dropdown button -->
+                            <div class="dropdown">
+                                <button class="btn btn-primary icon-container" type="button" id="wifiDropdown"
+                                    onclick="handleWiFiClick(event)">
+                                    <span class="icon">
+                                        <i class="fas fa-wifi"></i>
+                                    </span>
+                                </button>
+
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="wifiDropdown">
+                                    <li>
+                                        <form id="wifiForm" class="p-3">
+                                            <div class="mb-3">
+                                                <label for="ssid" class="form-label">Wi-Fi SSID</label>
+                                                <input type="text" class="form-control" id="ssid" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="password" class="form-label">Password</label>
+                                                <input type="password" class="form-control" id="password" required>
+                                            </div>
+                                            <button type="button" class="btn btn-primary"
+                                                onclick="connectToWiFi()">Connect</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <script>
+                                let isConnected = false;
+
+                                function handleWiFiClick(event) {
+                                    const wifiButton = document.getElementById('wifiDropdown');
+
+                                    if (isConnected) {
+                                        // If already connected, turn off Wi-Fi
+                                        isConnected = false;
+                                        wifiButton.classList.remove('btn-success-custom'); // Remove custom success class
+                                        wifiButton.classList.add('btn-secondary'); // Add gray class
+                                    } else {
+                                        // If not connected, show the dropdown
+                                        const dropdown = new bootstrap.Dropdown(wifiButton);
+                                        dropdown.toggle();
+                                    }
+                                }
+
+                                function connectToWiFi() {
+                                    const ssid = document.getElementById('ssid').value;
+                                    const password = document.getElementById('password').value;
+
+                                    // Handle the Wi-Fi connection logic here
+                                    console.log(`Connecting to Wi-Fi SSID: ${ssid} with Password: ${password}`);
+
+                                    // Change button color to custom success on successful connection
+                                    const wifiButton = document.getElementById('wifiDropdown');
+                                    wifiButton.classList.remove('btn-secondary'); // Remove gray class
+                                    wifiButton.classList.add('btn-success-custom'); // Add custom success class
+
+                                    // Set the connected state
+                                    isConnected = true;
+
+                                    // Close the dropdown
+                                    const dropdown = bootstrap.Dropdown.getInstance(wifiButton);
+                                    if (dropdown) dropdown.hide();
+
+                                    // Clear the form fields
+                                    document.getElementById('wifiForm').reset();
+                                }
+
+                            </script>
+                            <div id="dropdown" class="mt-3" style="display: none;">
+                                <input type="text" placeholder="SSID" class="form-control mb-2" />
+                                <input type="password" placeholder="Password" class="form-control" />
+                            </div>
                             <li class="nav-item dropdown">
                                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src="../assets/images/profile/prof.png" alt="" width="35" height="35"
                                         class="rounded-circle">
                                 </a>
+
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up user-dropdown"
                                     aria-labelledby="drop2">
                                     <div class="message-body">
@@ -395,6 +484,7 @@ if ($result->num_rows > 0) {
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
 
 
 
