@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
     <title>RiceDrops</title>
     <link rel="shortcut icon" type="image/png" href="../assets/images/logos/logo1.png" />
     <link rel="stylesheet" href="../assets/css/styles.min.css" />
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/design.css" />
 </head>
 
 
@@ -201,6 +201,8 @@ if ($result->num_rows > 0) {
                                     aria-labelledby="wifiDropdown">
                                     <div class="message-body">
                                         <p class="user-info">Connect to Wi-Fi</p>
+                                        <!-- Line Divider -->
+                                        <hr style="margin: 0.5rem 0;">
                                         <form id="wifiForm">
                                             <div class="mb-2">
                                                 <label for="ssid" class="form-label">Wi-Fi SSID</label>
@@ -217,18 +219,6 @@ if ($result->num_rows > 0) {
                                     </div>
                                 </div>
                             </li>
-
-                            <style>
-                                .wifi-connected {
-                                    color: green;
-                                    /* Color when connected */
-                                }
-
-                                .wifi-disconnected {
-                                    color: black;
-                                    /* Color when disconnected */
-                                }
-                            </style>
 
                             <script>
                                 document.getElementById('wifiForm').addEventListener('submit', function (event) {
@@ -249,6 +239,31 @@ if ($result->num_rows > 0) {
                                     }
                                 });
                             </script>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="notificationDropdown"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-bell" id="notificationIcon"
+                                        style="font-size: 25px; color: black;"></i>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up user-dropdown"
+                                    aria-labelledby="notificationDropdown">
+                                    <div class="message-body">
+                                        <p class="user-info">Notifications</p>
+                                        <!-- Line Divider -->
+                                        <hr style="margin: 0.5rem 0;">
+                                        <!-- Example notification list -->
+                                        <div class="notification-list">
+                                            <a href="#" class="dropdown-item">Notification 1</a>
+                                            <a href="#" class="dropdown-item">Notification 2</a>
+                                            <a href="#" class="dropdown-item">Notification 3</a>
+                                            <a href="#" class="dropdown-item">View All Notifications</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
 
 
 
