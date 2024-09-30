@@ -1,6 +1,6 @@
 <?php
 // Include the database connection
-include ('../DB_Connection/connection.php');
+include('../DB_Connection/connection.php');
 
 // Start session
 session_start();
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Password matches, start session and redirect to index.php
         $_SESSION['username'] = $username;
         $_SESSION['name'] = $user_name; // Store user's name in session
-         header("Location: index.php");
+        header("Location: index.php");
         exit;
       } else {
         // Password doesn't match, display error message
